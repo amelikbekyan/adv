@@ -441,6 +441,12 @@ if (SalebotTildaIntegration == undefined) {
                 return false;
         }
 
+        function getCookieFull(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+          }
+
         var fbc_cookie = askFbcCookie ? '_fbc' : ''
         var fb_cookie = askFbCookie ? '_fbp' : ''
         var ga_cookie = askGaCookie ? '_ga' : ''
@@ -461,7 +467,13 @@ if (SalebotTildaIntegration == undefined) {
             }
         }
         Array.prototype.forEach.call(cookies_names, function (cookie_name) {
-            let cookie_val = get_cookie(cookie_name); //id фейсбука для примера
+            if (cookie_name == 'advcake_track_url'){
+                let cookie_val = getCookieFull(cookie_name); //id фейсбука для примера
+
+            }else{
+                let cookie_val = get_cookie(cookie_name); //id фейсбука для примера
+            }
+            
             if (cookie_name == "_comagic_idzLMDd" && cookie_val !== false) {
                 cookie_val = cookie_val.split(".")[1]
             }

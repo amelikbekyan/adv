@@ -467,11 +467,12 @@ if (SalebotTildaIntegration == undefined) {
             }
         }
         Array.prototype.forEach.call(cookies_names, function (cookie_name) {
+            let cookie_val = false
             if (cookie_name == 'advcake_track_url'){
-                let cookie_val = getCookieFull(cookie_name); //id фейсбука для примера
+                 cookie_val = getCookieFull(cookie_name); //id фейсбука для примера
 
             }else{
-                let cookie_val = get_cookie(cookie_name); //id фейсбука для примера
+                 cookie_val = get_cookie(cookie_name); //id фейсбука для примера
             }
             
             if (cookie_name == "_comagic_idzLMDd" && cookie_val !== false) {

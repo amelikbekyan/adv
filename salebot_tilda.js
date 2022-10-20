@@ -446,11 +446,12 @@ if (SalebotTildaIntegration == undefined) {
         var ga_cookie = askGaCookie ? '_ga' : ''
         var ym_cookie = askYmCookie ? '_ym_uid' : ''
         var advcake_cookie =  'advcake_track_id'
+        var advcake_track_cookie = 'advcake_track_url'
         var rs_cookie = askRsCookie ? 'roistat_visit' : ''
         var comagic_cookie = askComagicCookie ? '_comagic_idzLMDd' : ''
 
 
-        var cookies_names = [fb_cookie, ga_cookie, ym_cookie, rs_cookie, fbc_cookie, comagic_cookie,advcake_cookie];
+        var cookies_names = [fb_cookie, ga_cookie, ym_cookie, rs_cookie, fbc_cookie, comagic_cookie,advcake_cookie, advcake_track_cookie];
         var cookie_string = ''
         if (typeof Comagic != 'undefined') {
             let cm_cookie = Comagic.getSessionId()
